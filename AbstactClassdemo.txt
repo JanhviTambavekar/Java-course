@@ -1,0 +1,85 @@
+3.Create abstract class vaccine.Create two variables age(int),nationality(String).create 2 concrete methods firstDose() and secondDose(). Scenario 1:user can take the first dose if the user is Indian and age is 18.After vaccination the user has to pay 250rs(which will be displayed on the console). Scenario 2: Users are eligible to take the second dose only after completing the first dose. Scenario 3: create abstract method boosterDose() in abstract class Vaccine.Create one implementation class vaccinationSuccessful, where implement boosterDose() method. Create main class vaccination and invoke all methods accordingly. [Hint:Create constructor to initialize variables age and nationality,Use flow control(Ifelse) to check condition]
+
+
+
+
+package Polymorphism;
+
+abstract class Vaccine {
+    protected int age;
+    protected String nationality;
+    private boolean firstDoseTaken = false;
+
+    public Vaccine(int age, String nationality) {
+        this.age = age;
+        this.nationality = nationality;
+    }
+
+    public void firstDose() {
+        if (nationality.equalsIgnoreCase("Indian") && age >= 18) {
+            System.out.println("First dose taken. Please pay 250 rs.");
+            firstDoseTaken = true; // Mark first dose as completed
+        } else {
+            System.out.println("You are not eligible for the first dose.");
+        }
+    }
+
+    public void secondDose() {
+        if (firstDoseTaken) {
+            System.out.println("Second dose taken. You are now fully vaccinated.");
+        } else {
+            System.out.println("You must complete the first dose before taking the second dose.");
+        }
+    }
+
+    public abstract void boosterDose();
+}
+class VaccinationSuccessful extends Vaccine {
+
+    public VaccinationSuccessful(int age, String nationality) {
+        super(age, nationality);
+    }
+
+    public void boosterDose() {
+        System.out.println("Booster dose taken. You are now fully protected.");
+    }
+}
+import java.util.Scanner;
+
+public class Vaccination {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        System.out.print("Enter your nationality: ");
+        String nationality = scanner.nextLine();
+
+        Vaccine vaccine = new VaccinationSuccessful(age, nationality);
+
+        vaccine.firstDose();
+
+        vaccine.secondDose();
+
+        vaccine.boosterDose();
+
+        scanner.close();
+    }
+}
+
+OUTPUT
+
+Enter your age: 30
+Enter your nationality: Indian
+First dose taken. Please pay 250 rs.
+Second dose taken. You are now fully vaccinated.
+Booster dose taken. You are now fully protected.
+
+Enter your age: 47
+Enter your nationality: Indian
+You are not eligible for the first dose.
+You must complete the first dose before taking the second dose.
+Booster dose taken. You are now fully protected.
+
