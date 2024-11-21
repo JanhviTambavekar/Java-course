@@ -1,0 +1,39 @@
+package Collectiondemo;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class cricketerScore {
+
+	public static void main(String[] args) 
+	{
+	       HashMap<String,Integer>cricketerScores= new HashMap<>();
+	       cricketerScores.put("Virat Kohli", 12000);
+	        cricketerScores.put("Rohit Sharma", 9500);
+	        cricketerScores.put("MS Dhoni", 10500);
+	        cricketerScores.put("Sachin Tendulkar", 18426);
+	        System.out.println("Cricketers and their scores: " + cricketerScores);
+           
+	        Scanner sc= new Scanner(System.in);
+	        System.out.print("Enter the name of the batsman to search for his score: ");
+	        String BatsmanName=sc.nextLine();
+	        
+	        
+	        if(cricketerScores.containsKey(BatsmanName))
+	        {
+	        	 System.out.println(BatsmanName + "'s score: " + cricketerScores.get(BatsmanName));
+	        } 
+	        else 
+	        {
+	            System.out.println("Batsman not found in the records.");
+	        }
+
+	}
+
+}
+
+OUTPUT
+
+Cricketers and their scores: {Virat Kohli=12000, Rohit Sharma=9500, MS Dhoni=10500, Sachin Tendulkar=18426}
+Enter the name of the batsman to search for his score: Rohit Sharma
+Rohit Sharma's score: 9500

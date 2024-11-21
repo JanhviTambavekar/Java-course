@@ -1,0 +1,28 @@
+package Collectiondemo;
+
+import java.util.HashMap;
+
+public class HashMapExample {
+
+	public static void main(String[] args) 
+	{
+		HashMap<Integer,String>map=new HashMap<>();
+		map.put(1,"Marathi");
+		map.put(2,"Hindi" );
+		map.put(3,"English" );
+		map.put(4, "Gujrati");
+
+		System.out.println("Initial HashMap:"+map);
+		map.put(4,"Telgu");
+		map.put(5,"kannad");
+        System.out.println("Updated HashMap: " + map);
+
+		
+	}
+
+}
+
+OUTPUT
+
+Initial HashMap:{1=Marathi, 2=Hindi, 3=English, 4=Gujrati}
+Updated HashMap: {1=Marathi, 2=Hindi, 3=English, 4=Telgu, 5=kannad}

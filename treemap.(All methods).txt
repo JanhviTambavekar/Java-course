@@ -1,0 +1,82 @@
+package Collectiondemo;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class treeMap {
+
+	public static void main(String[] args)
+	{
+		TreeMap<String, Integer> map = new TreeMap<>();
+		map.put("One", 1);
+		map.put("Two", 2);
+		map.put("Three", 3);
+
+		// Iterating over keys
+		System.out.println("Keys:");
+		for (String key : map.keySet())
+		{
+		    System.out.println(key);
+		}
+		// Iterating over values
+		System.out.println("Values:");
+		for (Integer value : map.values())
+		{
+		    System.out.println(value);
+		}
+		
+		// Iterating over key-value pairs
+		System.out.println("Key-Value Pairs:");
+		for (var entry : map.entrySet()) {
+		    System.out.println(entry.getKey() + " = " + entry.getValue());
+		}
+
+		// Using forEach
+		System.out.println("Using forEach:");
+		map.forEach((key, value) -> System.out.println(key + " = " + value));
+		// Iterating using an Iterator
+		System.out.println("Using Iterator:");
+		Iterator<Map.Entry<String, Integer>> iterator = map.entrySet().iterator();
+		while (iterator.hasNext()) {
+		    Map.Entry<String, Integer> entry = iterator.next();
+		    System.out.println(entry.getKey() + " = " + entry.getValue());
+		}
+		// Iterating in reverse order
+		System.out.println("Keys in Reverse Order:");
+		for (String key : map.descendingKeySet()) {
+		    System.out.println(key + " = " + map.get(key));
+		}
+		// Reverse-ordered view
+		System.out.println("Descending Map:");
+		for (var entry : map.descendingMap().entrySet()) {
+		    System.out.println(entry.getKey() + " = " + entry.getValue());
+		}
+		System.out.println("First Entry: " + map.firstEntry());
+		System.out.println("Last Entry: " + map.lastEntry());
+		System.out.println("Higher Entry (Two): " + map.higherEntry("Two"));
+		System.out.println("Lower Entry (Two): " + map.lowerEntry("Two"));
+		// Using Streams
+		System.out.println("Filtered Entries (value > 1):");
+		map.entrySet().stream()
+		    .filter(entry -> entry.getValue() > 1)
+		    .forEach(entry -> System.out.println(entry.getKey() + " = " + entry.getValue()));
+
+	}
+}
+
+
+OUTPUT
+
+One = 1
+Descending Map:
+Two = 2
+Three = 3
+One = 1
+First Entry: One=1
+Last Entry: Two=2
+Higher Entry (Two): null
+Lower Entry (Two): Three=3
+Filtered Entries (value > 1):
+Three = 3
+Two = 2

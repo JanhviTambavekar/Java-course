@@ -1,0 +1,38 @@
+package Collectiondemo;
+
+import java.util.ArrayList;
+
+public class SumOfEvenNumbers {
+
+	public static void main(String[] args)
+	{
+      ArrayList<Integer> a1= new ArrayList<>();
+      a1.add(15);
+      a1.add(23);
+      a1.add(38);
+      a1.add(47);
+      a1.add(53);
+      a1.add(16);
+     a1.add(86);
+    System.out.println("orignal List:"+a1);
+        int sum=0;
+       for(int num:a1)
+       {
+    	   if(num%2==0)
+    	   {
+    		   sum=sum+num;
+           }
+
+       }
+
+       System.out.println("Sum of Even Numbers: " + sum);
+
+	}
+
+}
+
+
+OUTPUT
+
+orignal List:[15, 23, 38, 47, 53, 16, 86]
+Sum of Even Numbers: 140

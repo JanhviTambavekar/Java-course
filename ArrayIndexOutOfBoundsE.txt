@@ -1,0 +1,26 @@
+public class ArrayIndexOutOfBoundsExample {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        
+        try {
+            for (int i = 0; i <= numbers.length; i++) {  // Notice i <= numbers.length, which will cause the exception
+                System.out.println("Element at index " + i + ": " + numbers[i]);
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBoundsException caught: Attempted to access an index outside the array bounds.");
+            e.printStackTrace();
+        }
+    }
+}
+
+
+OUTPUT
+
+Element at index 0: 1
+Element at index 1: 2
+Element at index 2: 3
+Element at index 3: 4
+Element at index 4: 5
+ArrayIndexOutOfBoundsException caught: Attempted to access an index outside the array bounds.
+java.lang.ArrayIndexOutOfBoundsException: 5
+    at ArrayIndexOutOfBoundsExample.main(ArrayIndexOutOfBoundsExample.java:10)

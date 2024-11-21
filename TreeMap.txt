@@ -1,0 +1,32 @@
+package Collectiondemo;
+
+import java.util.TreeMap;
+
+public class treeMap {
+
+	public static void main(String[] args)
+	{
+      TreeMap<String,Integer>T= new TreeMap<>();
+      T.put("one",1);
+      T.put("Three",3);
+      T.put("Two", 2);
+      System.out.println("Orignal TreeMap:"+T);
+      
+     Integer removedValue = T.remove("Two");
+     System.out.println("Removed value:"+removedValue);
+     boolean isEntryRemoved =!T.containsKey("Three");
+    // System.out.println("Is the entry {Three=3} removed? " + isEntryRemoved);
+     System.out.println("is the entry(Three=3)removed?"+isEntryRemoved );
+     
+     System.out.println("Updated TreeMap:"+T);
+
+	}
+}
+
+
+OUTPUT
+
+Orignal TreeMap:{Three=3, Two=2, one=1}
+Removed value:2
+is the entry(Three=3)removed?false
+Updated TreeMap:{Three=3, one=1}

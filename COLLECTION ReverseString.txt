@@ -1,0 +1,27 @@
+package Collectiondemo;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ReverseString {
+
+	public static void main(String[] args) 
+	{
+       List<String>StringList=new ArrayList();
+       StringList.add("tambavekar");
+       StringList.add("vikas");
+       StringList.add("Janhvi");
+       System.out.println("Orignal List:"+StringList);
+       
+      Collections.reverse(StringList);	
+      System.out.println("Reversed List: " + StringList);
+
+	}
+
+}
+
+
+OUTPUT
+Orignal List:[tambavekar, vikas, Janhvi]
+Reversed List: [Janhvi, vikas, tambavekar]

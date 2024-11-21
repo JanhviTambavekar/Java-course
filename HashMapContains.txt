@@ -1,0 +1,47 @@
+package Collectiondemo;
+
+import java.util.HashMap;
+
+public class hashMapContains {
+
+	public static void main(String[] args) 
+	{
+       HashMap<Integer,String>map= new HashMap<>();
+       System.out.println("Befor puting the element:");
+       if(map.isEmpty())
+       { 
+    	   System.out.println("is Empty");
+  
+       }
+       else
+       {
+    	   System.out.println(" not Empty");
+
+    	   
+       }
+	   map.put(1,"hello");
+	   map.put(2, "janhvi");
+       System.out.println("After puting the element:");
+
+	   if(map.isEmpty())
+       {
+    	   System.out.println(" is Empty");
+  
+       }
+       else
+       {
+    	   System.out.println("not Empty");
+
+    	   
+       }
+	   
+	}
+
+}
+
+OUTPUT
+
+Befor puting the element:
+is Empty
+After puting the element:
+not Empty

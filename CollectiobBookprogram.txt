@@ -1,0 +1,61 @@
+package Collectiondemo;
+import java.util.ArrayList;
+
+public class Book 
+{
+
+	
+	    private int bookId;
+	    private String bookName;
+	    private String authorName;
+
+	    // Parameterized constructor
+	    public Book(int bookId, String bookName, String authorName) {
+	        this.bookId = bookId;
+	        this.bookName = bookName;
+	        this.authorName = authorName;
+	    }
+
+	    // Getter methods for displaying book details
+	    public int getBookId() {
+	        return bookId;
+	    }
+
+	    public String getBookName() {
+	        return bookName;
+	    }
+
+	    public String getAuthorName() {
+	        return authorName;
+	    }
+	}
+
+	public class BookDemo {
+	    public static void main(String[] args) {
+	        // Create an ArrayList of type Book
+	        ArrayList<Book> books = new ArrayList<>();
+
+	        // Add Book objects to the ArrayList
+	        books.add(new Book(1, "The Long Game", "Dorie Clark"));
+	        books.add(new Book(2, "How to Win Friends and Influence People", " Dale Carnegie"));
+	        books.add(new Book(3, "The Great Gatsby", "F. Scott Fitzgerald"));
+
+	        // Display all book details using an enhanced for loop
+	        for (Book book : books) {
+	            System.out.println("Book ID: " + book.getBookId());
+	            System.out.println("Book Name: " + book.getBookName());
+	            System.out.println("Author Name: " + book.getAuthorName());
+	            System.out.println("--------------------------");
+	        }
+	    }
+	}
+
+
+OUTPUT
+
+
+Book Details:
+Book [ID=1, Name=The Long Game, Author=Dorie Clark]
+Book [ID=2, Name=How to Win Friends and Influence People, Author=Dale Carnegie]
+Book [ID=3, Name=The Great Gatsby, Author=F. Scott Fitzgerald]
+

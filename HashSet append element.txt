@@ -1,0 +1,27 @@
+package Collectiondemo;
+
+import java.util.HashSet;
+
+public class Hashset {
+
+	public static void main(String[] args)
+	{
+      HashSet<String>Hs=new HashSet<>();
+      Hs.add("Dog");
+      Hs.add("Cat");
+      Hs.add("cow");
+      Hs.add("tigger");
+      System.out.println("HashSet before appending: " + Hs);
+      String elementToAdd= "Elephant";
+      Hs.add(elementToAdd);
+
+      // Display the HashSet after appending
+      System.out.println("HashSet after appending: " + Hs);
+	}
+
+}
+
+OUTPUT
+
+HashSet before appending: [Cat, tigger, cow, Dog]
+HashSet after appending: [Cat, Elephant, tigger, cow, Dog]
