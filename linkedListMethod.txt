@@ -1,0 +1,94 @@
+package Collectiondemo;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class linkedListMethod {
+
+	public static void main(String[] args) 
+	{
+       LinkedList l1= new LinkedList();
+       l1.add(66);
+       l1.add(77);
+       l1.add(14);
+       l1.add("j");
+       l1.add(55.88);
+       l1.add("hello");
+       l1.add("janhvi");
+       l1.add("t");
+       System.out.println(l1);
+       l1.getClass();
+       l1.addFirst(4);
+       System.out.println(l1);
+       System.out.println("is empty method:"+l1.isEmpty());
+       System.out.println("index of method:"+l1.indexOf(14));
+       System.out.println("size method:"+l1.size());
+      //System.out.println();
+
+         
+       System.out.println ("getfirst method:"+l1.getFirst());
+       System.out.println ("getlast method:"+l1.getLast());
+       ArrayList a= new ArrayList();
+       a.add("wlcomne");
+       a.add("java");
+       a.add(10);
+       a.add("namste");
+       System.out.println(l1.addAll(a));
+       System.out.println(l1);
+ ListIterator litr= l1.listIterator();
+       
+       while(litr.hasNext())
+       {
+           System.out.println(litr.next());
+
+       }
+       System.out.println("----------------------");
+       System.out.println("get the elements in revers order using previous");
+       while(litr.hasPrevious())
+        {
+            System.out.println(litr.previous());
+  
+        }
+	}
+
+}
+ OUTPUT
+
+[66, 77, 14, j, 55.88, hello, janhvi, t]
+[4, 66, 77, 14, j, 55.88, hello, janhvi, t]
+is empty method:false
+index of method:3
+size method:9
+getfirst method:4
+getlast method:t
+true
+[4, 66, 77, 14, j, 55.88, hello, janhvi, t, wlcomne, java, 10, namste]
+4
+66
+77
+14
+j
+55.88
+hello
+janhvi
+t
+wlcomne
+java
+10
+namste
+----------------------
+get the elements in revers order using previous
+namste
+10
+java
+wlcomne
+t
+janhvi
+hello
+55.88
+j
+14
+77
+66
+4
+

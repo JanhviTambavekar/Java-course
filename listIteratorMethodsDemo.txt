@@ -1,0 +1,53 @@
+package Collectiondemo;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+public class listIteratorMethodsDemo {
+
+	public static void main(String[] args) 
+	{
+		 List l= new ArrayList();
+	      l.add(10);
+	      l.add(20);
+	      l.add("hello");
+	      l.add("Janhvi");
+	      System.out.println(l);
+	      System.out.println("=================");
+
+	      ListIterator litr=l.listIterator();
+	     
+	      while(litr.hasNext())
+	      {
+		      System.out.println(litr.equals(30));
+		      System.out.println(litr.next());
+
+	      }
+	      System.out.println("=================");
+
+	      while(litr.hasPrevious())
+	      {
+	      System.out.println(litr.previous());
+	      }
+	}
+
+}
+
+OUTPUT
+[10, 20, hello, Janhvi]
+=================
+false
+10
+false
+20
+false
+hello
+false
+Janhvi
+=================
+Janhvi
+hello
+20
+10

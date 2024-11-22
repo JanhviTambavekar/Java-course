@@ -1,0 +1,40 @@
+import java.util.Iterator;
+import java.util.List;
+public class iteratorMethodDemo {
+
+	public static void main(String[] args) 
+	{
+      List l= new ArrayList();
+      l.add(10);
+      l.add(20);
+      l.add("hello");
+      l.add("Janhvi");
+      System.out.println(l);
+      
+      Iterator itr=l.iterator();
+      while(itr.hasNext())
+      {
+          System.out.println(itr.equals(itr));
+          System.out.println(itr.next());
+             	  
+      }
+      while(itr.hasNext())
+      {
+          System.out.println(itr.equals(itr));
+          System.out.println(itr.next());
+             	  
+      }
+	}
+
+}
+
+OUTPUT
+[10, 20, hello, Janhvi]
+true
+10
+true
+20
+true
+hello
+true
+Janhvi

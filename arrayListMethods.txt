@@ -1,0 +1,101 @@
+package Collectiondemo;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
+
+public class arrayListMethods 
+{
+
+	public static void main(String[] args) 
+	{
+       ArrayList a1= new ArrayList();
+       a1.add(10);
+       a1.add(54);
+       a1.add("Cat");
+       a1.add("J");
+       a1.add(44.66);
+       a1.add(64);
+       System.out.println(a1);
+
+       a1.get(4);
+       System.out.println("after remove elemnet:");
+
+       a1.remove(2);
+       System.out.println(a1);
+       System.out.println(a1.contains("j"));
+       a1.indexOf(64);
+       System.out.println("after set element:");
+
+       a1.set(0, 20);
+       System.out.println(a1);
+       Iterator itr=a1.iterator();
+       System.out.println("get element using iterator:");
+
+       while(itr.hasNext())
+       {
+           System.out.println(itr.next());
+ 
+       }
+
+       System.out.println("----------------------");
+
+       ArrayList a2= new ArrayList();
+       a2.add(66);
+       a2.add(556);
+       a2.add("mango");
+       a2.add("welcome");
+       //a2.containsAll(a1);
+       System.out.println(a2);
+
+       System.out.println(a2.containsAll(a1));
+       a2.add(a1);
+       System.out.println(a2);
+
+      ListIterator litr= a2.listIterator();
+       
+      while(litr.hasNext())
+      {
+          System.out.println(litr.next());
+
+      }
+      System.out.println("----------------------");
+      System.out.println("get the elements in revers order using previous");
+      while(litr.hasPrevious())
+       {
+           System.out.println(litr.previous());
+ 
+       }
+	}
+
+}
+
+OUTPUT
+[10, 54, Cat, J, 44.66, 64]
+after remove elemnet:
+[10, 54, J, 44.66, 64]
+false
+after set element:
+[20, 54, J, 44.66, 64]
+get element using iterator:
+20
+54
+J
+44.66
+64
+----------------------
+[66, 556, mango, welcome]
+false
+[66, 556, mango, welcome, [20, 54, J, 44.66, 64]]
+66
+556
+mango
+welcome
+[20, 54, J, 44.66, 64]
+----------------------
+get the elements in revers order using previous
+[20, 54, J, 44.66, 64]
+welcome
+mango
+556
+66
